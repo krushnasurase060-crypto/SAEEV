@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SAE Electric Vehicle Team - Innovating the future of electric mobility with high-performance EV scooters">
+    <meta name="keywords" content="EV scooter, electric vehicle, SAE, engineering, sustainable mobility">
+    <title>S-A-E-E-V | Electric Vehicle Innovation Team</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">S-A-E-E-V</span>
+                    <span class="logo-sub">Electric Vehicle Team</span>
+                </div>
+            </div>
+            
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><a href="#journey" class="nav-link">Journey</a></li>
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="#documentation" class="nav-link">Documentation</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="disclaimer-btn" id="disclaimerBtn">Disclaimer</button>
+                </div>
+                
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Powering the Future of <span class="highlight">Electric Mobility</span></h1>
+                <p class="hero-subtitle">Innovating high-performance EV scooters through cutting-edge engineering and sustainable design.</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Explore Our Journey</a>
+                    <a href="#contact" class="btn btn-secondary">Join Our Team</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">EV Models</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="25">0</span>
+                        <span class="stat-label">Team Members</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">Awards Won</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="morph-shape"></div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1622295020265-4583ac925e8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="EV Scooter Design" class="scooter-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scooter Parts Section -->
+    <section class="scooter-section">
+        <div class="container">
+            <h2 class="section-title">Our EV Scooter <span class="highlight">Innovation</span></h2>
+            <p class="section-subtitle">Explore the advanced components that power our high-performance electric scooters</p>
+            
+            <div class="scooter-container">
+                <div class="scooter-image-wrapper">
+                    <div class="scooter-main">
+                        <img src="https://images.unsplash.com/photo-1622295020265-4583ac925e8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="EV Scooter" class="scooter-img">
+                        
+                        <!-- Interactive Parts -->
+                        <div class="scooter-part battery" data-part="battery">
+                            <div class="part-dot"></div>
+                            <div class="part-tooltip">Lithium-ion Battery Pack</div>
+                        </div>
+                        <div class="scooter-part motor" data-part="motor">
+                            <div class="part-dot"></div>
+                            <div class="part-tooltip">High-Torque Electric Motor</div>
+                        </div>
+                        <div class="scooter-part controller" data-part="controller">
+                            <div class="part-dot"></div>
+                            <div class="part-tooltip">Smart Controller Unit</div>
+                        </div>
+                        <div class="scooter-part bms" data-part="bms">
+                            <div class="part-dot"></div>
+                            <div class="part-tooltip">Battery Management System</div>
+                        </div>
+                        <div class="scooter-part display" data-part="display">
+                            <div class="part-dot"></div>
+                            <div class="part-tooltip">Digital Display Dashboard</div>
+                        </div>
+                        <div class="scooter-part frame" data-part="frame">
+                            <div class="part-dot"></div>
+                            <div class="part-tooltip">Carbon Fiber Frame</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="parts-info">
+                    <div class="parts-list">
+                        <div class="part-item active" data-part="battery">
+                            <i class="fas fa-car-battery"></i>
+                            <div class="part-content">
+                                <h3>Battery System</h3>
+                                <p>72V 30Ah lithium-ion battery with advanced thermal management and fast charging capability.</p>
+                            </div>
+                        </div>
+                        <div class="part-item" data-part="motor">
+                            <i class="fas fa-cogs"></i>
+                            <div class="part-content">
+                                <h3>Electric Motor</h3>
+                                <p>5kW brushless DC motor with 95% efficiency and regenerative braking system.</p>
+                            </div>
+                        </div>
+                        <div class="part-item" data-part="controller">
+                            <i class="fas fa-microchip"></i>
+                            <div class="part-content">
+                                <h3>Controller Unit</h3>
+                                <p>Smart controller with IoT connectivity and real-time performance monitoring.</p>
+                            </div>
+                        </div>
+                        <div class="part-item" data-part="bms">
+                            <i class="fas fa-brain"></i>
+                            <div class="part-content">
+                                <h3>BMS</h3>
+                                <p>Advanced battery management system with cell balancing and safety protection.</p>
+                            </div>
+                        </div>
+                        <div class="part-item" data-part="display">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div class="part-content">
+                                <h3>Digital Dashboard</h3>
+                                <p>7-inch touch display with navigation, diagnostics, and customizable interface.</p>
+                            </div>
+                        </div>
+                        <div class="part-item" data-part="frame">
+                            <i class="fas fa-weight"></i>
+                            <div class="part-content">
+                                <h3>Lightweight Frame</h3>
+                                <p>Carbon fiber composite frame providing strength while minimizing weight.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section">
+        <div class="container">
+            <h2 class="section-title">What Experts <span class="highlight">Say</span></h2>
+            <p class="section-subtitle">Reviews from industry professionals and team mentors</p>
+            
+            <div class="reviews-container">
+                <div class="reviews-slider">
+                    <div class="review-slide active">
+                        <div class="review-card">
+                            <div class="review-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="review-text">"The S-A-E-E-V team has demonstrated exceptional innovation in electric vehicle design. Their approach to battery management is industry-leading."</p>
+                            <div class="review-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Dr. Sarah Chen</h4>
+                                    <p>EV Technology Director, Green Mobility Corp</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="review-text">"This team's dedication to sustainable engineering practices sets a new standard for student-led EV projects. Their scooter's efficiency metrics are impressive."</p>
+                            <div class="review-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Prof. Michael Rodriguez</h4>
+                                    <p>Department Head, Automotive Engineering</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-slide">
+                        <div class="review-card">
+                            <div class="review-quote">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                            <p class="review-text">"The attention to detail in thermal management and safety systems shows professional-level engineering thinking. A remarkable achievement."</p>
+                            <div class="review-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4>Jessica Williams</h4>
+                                    <p>Senior Engineer, Electric Vehicle Association</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <p class="section-subtitle">Have questions or want to collaborate? Reach out to our team</p>
+            
+            <div class="contact-container">
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Us</h3>
+                            <p>team@sae-ev.org</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Visit Our Lab</h3>
+                            <p>Engineering Building, Room 305</p>
+                            <p>University Campus</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Join Our Team</h3>
+                            <p>Open positions for engineers, designers, and developers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <p>Interactive Map Location</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-bolt"></i>
+                        <span>S-A-E-E-V</span>
+                    </div>
+                    <p class="footer-description">Pioneering electric mobility through innovation, sustainability, and cutting-edge engineering.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#journey">Our Journey</a></li>
+                            <li><a href="#team">Team Members</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#documentation">Documentation</a></li>
+                            <li><a href="#">Technical Papers</a></li>
+                            <li><a href="#">Design Specs</a></li>
+                            <li><a href="#">Research Data</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#">Sponsorships</a></li>
+                            <li><a href="#">Collaborations</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 S-A-E-E-V Electric Vehicle Team. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link" id="footerDisclaimer">Disclaimer</a>
+                    <a href="#" class="legal-link">Privacy Policy</a>
+                    <a href="#" class="legal-link">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Disclaimer Modal -->
+    <div class="modal" id="disclaimerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Disclaimer</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>The information provided on this website is for educational and informational purposes only. The S-A-E-E-V team makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability of the information contained on the website.</p>
+                <p>All technical specifications and performance data are based on laboratory testing and simulations. Actual results may vary based on real-world conditions, usage patterns, and environmental factors.</p>
+                <p>The designs and concepts presented are the intellectual property of the S-A-E-E-V team and may be protected by applicable copyright and patent laws.</p>
+                <p>For official documentation and verified technical specifications, please contact the team directly.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
