@@ -30,7 +30,7 @@
             <div class="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About Us</a></li>
+                    <li><span class="nav-link">About Us</span></li>
                     <li><a href="#journey" class="nav-link">Journey</a></li>
                     <li><a href="#team" class="nav-link">Team</a></li>
                     <li><a href="#documentation" class="nav-link">Documentation</a></li>
@@ -58,8 +58,8 @@
                 <h1 class="hero-title">Powering the Future of <span class="highlight">Electric Mobility</span></h1>
                 <p class="hero-subtitle">Innovating high-performance EV scooters through cutting-edge engineering and sustainable design.</p>
                 <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Explore Our Journey</a>
-                    <a href="#contact" class="btn btn-secondary">Join Our Team</a>
+                    <button class="btn btn-primary" disabled aria-disabled="true">Explore Our Journey</button>
+                    <a href="https://forms.gle/aZCs28cQS78SPmYVA" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Join Our Team</a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
@@ -76,12 +76,18 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
+                <div class="hero-visual">
                 <div class="morph-shape"></div>
                 <div class="hero-image">
-                    <img src="https://ibb.co/hJ7SYh0m">
+                    <img src="images/ev.png" alt="EV Scooter Design" class="scooter-image">
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="about-teaser">
+        <div class="container">
+            <h2 class="section-title">About S-A-E-E-V</h2>
+            <p class="section-subtitle">We are a student EV team at Pimpri Chinchwad College of Engineering building electric scooters for national competitions.</p>
         </div>
     </section>
 
@@ -94,7 +100,7 @@
             <div class="scooter-container">
                 <div class="scooter-image-wrapper">
                     <div class="scooter-main">
-                        <img src="https://images.unsplash.com/photo-1622295020265-4583ac925e8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="EV Scooter" class="scooter-img">
+                        <img src="images/ev.png" alt="EV Scooter" class="scooter-img">
                         
                         <!-- Interactive Parts -->
                         <div class="scooter-part battery" data-part="battery">
@@ -286,7 +292,7 @@
                         </div>
                         <div class="info-content">
                             <h3>Email Us</h3>
-                            <p>team@sae-ev.org</p>
+                            <p>krushnasurase060@gmail.com</p>
                         </div>
                     </div>
                     
@@ -296,8 +302,7 @@
                         </div>
                         <div class="info-content">
                             <h3>Visit Our Lab</h3>
-                            <p>Engineering Building, Room 305</p>
-                            <p>University Campus</p>
+                            <p>Mechanical Building ,PCCOE ,Akhurdi,Pune</p>
                         </div>
                     </div>
                     
@@ -392,6 +397,12 @@
                 <h2>Disclaimer</h2>
                 <button class="modal-close">&times;</button>
             </div>
+
+                <!-- Parts Editor Controls (visible for site editing) -->
+                <div id="partsEditorControls" class="parts-editor" aria-hidden="false">
+                    <button id="editPartsBtn" class="btn" title="Toggle edit points">Edit Points</button>
+                    <button id="exportPartsBtn" class="btn" title="Export parts CSS">Export CSS</button>
+                </div>
             <div class="modal-body">
                 <p>The information provided on this website is for educational and informational purposes only. The S-A-E-E-V team makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability of the information contained on the website.</p>
                 <p>All technical specifications and performance data are based on laboratory testing and simulations. Actual results may vary based on real-world conditions, usage patterns, and environmental factors.</p>
@@ -403,5 +414,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
