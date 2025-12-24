@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
     initMobileMenu();
     initScooterParts();
+    initPartsEditor();
     initReviewsSlider();
     initContactForm();
     initDisclaimerModal();
@@ -52,6 +53,104 @@ function initThemeToggle() {
         document.body.classList.remove('dark-mode');
         localStorage.setItem('theme', 'light');
         icon.className = 'fas fa-moon';
+    }
+}
+
+// Parts Editor: make scooter part dots draggable and persist positions
+function initPartsEditor() {
+    const editBtn = document.getElementById('editPartsBtn');
+    const exportBtn = document.getElementById('exportPartsBtn');
+    const parts = document.querySelectorAll('.scooter-part');
+    const container = document.querySelector('.scooter-main');
+    if (!editBtn || !exportBtn || !container) return;
+
+    let editing = false;
+    let dragging = null;
+
+    // Load saved positions
+    const saved = localStorage.getItem('scooterPartPositions');
+    if (saved) {
+        try {
+            const positions = JSON.parse(saved);
+            parts.forEach(p => {
+                const id = p.dataset.part;
+                if (positions[id]) {
+                    p.style.left = positions[id].left;
+                    p.style.top = positions[id].top;
+                }
+            });
+        } catch (e) {
+            console.warn('Failed to parse saved positions', e);
+        }
+    }
+
+    editBtn.addEventListener('click', () => {
+        editing = !editing;
+        editBtn.textContent = editing ? 'Exit Edit' : 'Edit Points';
+        parts.forEach(p => p.classList.toggle('editing', editing));
+    });
+
+    exportBtn.addEventListener('click', () => {
+        const cssLines = [];
+        parts.forEach(p => {
+            const cls = Array.from(p.classList).find(c => c !== 'scooter-part' && c !== 'editing') || p.dataset.part;
+            const left = p.style.left || getComputedStyle(p).left;
+            const top = p.style.top || getComputedStyle(p).top;
+            cssLines.push(`.${cls} { top: ${top}; left: ${left}; }`);
+        });
+        const output = cssLines.join('\n');
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(output).then(() => {
+                alert('CSS exported to clipboard');
+            }).catch(() => {
+                window.prompt('Copy CSS below', output);
+            });
+        } else {
+            window.prompt('Copy CSS below', output);
+        }
+    });
+
+    // Make parts draggable when in editing mode
+    parts.forEach(part => {
+        part.style.touchAction = 'none';
+
+        part.addEventListener('pointerdown', (e) => {
+            if (!editing) return;
+            dragging = { el: part };
+            part.setPointerCapture(e.pointerId);
+        });
+
+        part.addEventListener('pointermove', (e) => {
+            if (!dragging || dragging.el !== part) return;
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const leftPct = Math.max(0, Math.min(100, (x / rect.width) * 100));
+            const topPct = Math.max(0, Math.min(100, (y / rect.height) * 100));
+
+            part.style.left = leftPct.toFixed(2) + '%';
+            part.style.top = topPct.toFixed(2) + '%';
+        });
+
+        part.addEventListener('pointerup', (e) => {
+            if (!dragging || dragging.el !== part) return;
+            dragging = null;
+            savePositions();
+        });
+
+        part.addEventListener('pointercancel', () => {
+            dragging = null;
+        });
+    });
+
+    function savePositions() {
+        const obj = {};
+        parts.forEach(p => {
+            const id = p.dataset.part || Array.from(p.classList)[1];
+            obj[id] = { left: p.style.left || getComputedStyle(p).left, top: p.style.top || getComputedStyle(p).top };
+        });
+        localStorage.setItem('scooterPartPositions', JSON.stringify(obj));
     }
 }
 
@@ -181,33 +280,37 @@ function initContactForm() {
     
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Get form data
-        const formData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value
-        };
-        
-        // In a real application, you would send this data to a server
-        console.log('Form submitted:', formData);
-        
-        // Show success message
+
+        // Gather form values
+        const name = document.getElementById('name').value || '';
+        const email = document.getElementById('email').value || '';
+        const subjectVal = document.getElementById('subject').value || 'Website Contact';
+        const message = document.getElementById('message').value || '';
+
+        // Build mailto URL to open user's mail client
+        const to = 'krushnasurase060@gmail.com';
+        const subject = encodeURIComponent(subjectVal);
+        const body = encodeURIComponent(
+            'Name: ' + name + '\n' +
+            'Email: ' + email + '\n\n' +
+            message
+        );
+
+        const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+
+        // Attempt to open the user's mail client. This depends on user's environment.
+        window.location.href = mailto;
+
+        // Optionally show a quick UI feedback (will still open mail client)
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        
-        submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+        submitBtn.innerHTML = '<i class="fas fa-check"></i> Opening Mail Client';
         submitBtn.style.background = 'var(--accent-color)';
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Reset button after 3 seconds
+
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.style.background = '';
-        }, 3000);
+        }, 2500);
     });
 }
 
