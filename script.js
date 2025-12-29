@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initStatsCounter();
     
-    console.log('S-A-E-E-V Website initialized successfully');
+    console.log('Vajrablaze Website initialized successfully');
 });
 
 // Dark/Light Mode Toggle
