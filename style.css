@@ -171,6 +171,18 @@ h1, h2, h3, h4 {
     background-clip: text;
 }
 
+/* Brand accent for the 'blaze' part of Vajrablaze */
+.blaze {
+    color: #e53935;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+.logo-main .blaze {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+}
+
 .logo-sub {
     font-size: 0.75rem;
     color: var(--text-secondary);
@@ -476,6 +488,26 @@ h1, h2, h3, h4 {
 .bms { top: 40%; left: 40%; }
 .display { top: 20%; left: 50%; }
 .frame { top: 70%; left: 50%; }
+
+/* Parts Editor Controls */
+.parts-editor {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 1100;
+}
+.parts-editor .btn {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+}
+.scooter-part.editing {
+    outline: 2px dashed var(--primary-color);
+}
 
 .parts-list {
     display: flex;
